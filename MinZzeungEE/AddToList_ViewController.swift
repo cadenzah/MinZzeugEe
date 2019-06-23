@@ -29,7 +29,7 @@ class AddToList_ViewController: UITableViewController, UIPickerViewDelegate, UIP
     @IBOutlet weak var secondLisenceNumber: UITextField!
     @IBOutlet weak var lawText: UITextView!
     
-    @IBOutlet weak var locatinImage: UIImageView!
+    @IBOutlet weak var locationImage: UIImageView!
     @IBOutlet weak var secondEnrolllLabel: UILabel!
     @IBOutlet weak var firstEnrollLabel: UILabel!
     @IBOutlet weak var thirdLisenceNumber: UITextField!
@@ -83,7 +83,7 @@ class AddToList_ViewController: UITableViewController, UIPickerViewDelegate, UIP
         self.firstEnrollLabel.isHidden = isHide
         self.secondEnrolllLabel.isHidden = isHide
         self.locationPicker.isHidden = isHide
-        self.locatinImage.isHidden = isHide
+        self.locationImage.isHidden = isHide
     }
     
     
@@ -292,6 +292,7 @@ class AddToList_ViewController: UITableViewController, UIPickerViewDelegate, UIP
         lawText.delegate = self as? UITextViewDelegate
         locationPicker.delegate = self
         locationPicker.dataSource = self
+        
          self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
 
 
@@ -669,9 +670,7 @@ class AddToList_ViewController: UITableViewController, UIPickerViewDelegate, UIP
     }
     
     @IBOutlet weak var locationPicker: UIPickerView!
-    @IBOutlet weak var locationName: UITextField!
-    
-    var locationData = ["없음", "서울:11", "부산:12", "경기:13", "강원:14", "충북:15", "충남:16", "전북:17", "전남:18", "경북:19", "경남:20", "제주:21", "대구:22", "인천:23", "광주:24", "대전:25", "울산:26"]
+    var locationData = ["지역선택", "서울:11", "부산:12", "경기:13", "강원:14", "충북:15", "충남:16", "전북:17", "전남:18", "경북:19", "경남:20", "제주:21", "대구:22", "인천:23", "광주:24", "대전:25", "울산:26"]
     var pickedNumber:String = ""
     var pickedIndex:Int = 0
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
